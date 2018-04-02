@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>登录</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-------------jquery库-------------->
+  	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+	<!-------------Amazeui--------------->
+    <script type="text/javascript" src="js/amazeui.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/amazeui.css">
+    <!------------核心样式-------------->
+    <link rel="stylesheet" type="text/css" href="css/user.css">    
+   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/media-queries.css">
+</head>
+<body>
+<div class="loginheader">
+	
+</div>
+<div id="log_register">
+	
+	<div class="lr_box">
+		
+		<div class="tag">
+			<ul>
+				<li><a class="cur" href="login.html">登录</a></li>
+				<li><a id="reg" href="register.html">注册</a></li>
+				<div class="clear"></div>
+			</ul>
+		</div>
+		<table class="table_list">
+			<tbody>
+				<tr>
+					<td><input class="text" type="text" name="user" id="user" placeholder="用户名" /></td>
+				</tr>
+				<tr>
+					<td><input class="text" type="password" name="user" id="pass" placeholder="密码" /></td>
+				</tr>
+				<tr>
+					<td><input class="text" type="text" name="tel" id="phone" placeholder="手机号登录" /><button>发送短信</button></td>
+				</tr>
+				<tr>
+					<td><input class="text" type="text" name="dx" id="dx" placeholder="请输入短信验证码"/></td>
+				</tr>
+				<tr>
+					<td>
+						<label class="am-checkbox">
+							<input type="checkbox" id="checkbox_a1" class="chk_1"> 
+							<label for="checkbox_a1" id="rad"></label> 记住密码
+						</label>
+						<span class="back" >找回密码</span>
+					</td>
+				</tr>
+				<tr>
+					<td><input class="submit" type="submit" value="登录" id="btn"></td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+
+</div>
+</body>
+<script src="js/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/cookie.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	$('.loginheader').load('http://localhost:3000/index.html header',function(){
+		var str=[];
+		str=getCookie("Iduser")
+		// $('#username').html(str).css({
+		// 	color:"#cc0000"
+		// })
+		if(str){
+			var strArr=str.split(',');
+		}
+		// console.log(strArr);
+		if($('#username').html()!=''){
+			$('#username').attr({"title":"点我退出登录"});
+			$('#username').click(function(e){
+				e.preventDefault();
+				$('#username').html('');
+				removeCookie("Iduser",1,-1)
+			})
+		}else{
+			$('#username').attr({"title":"",});
+			document.getElementById("username").style.textDecoration="none";
+		}
+	})
+	if(document.cookie!=''){
+//	    	console.log(1)	
+	    	var oUser=getCookie("user");
+	    	var oPass=getCookie('pass');
+	    	var oTel=getCookie('phone');
+//	    	console.log(getCookie('pass'))
+	    	$('#user').val(oUser);
+	    	$('#pass').val(oPass);
+	    }
+	    $("#rad").click(function(){
+			setCookie("user",$('#user').val(),3)
+			setCookie('pass',$('#pass').val(),3)
+			setCookie('phone',$('#phone').val(),3)
+			
+		})
+		$(function(){
+			var duanx=0;
+			var Iduser=[];
+			$('button').click(function(){
+//				$.cookie("Iduser",1,{expires:7});
+				$.ajax({
+					
+				url:'http://lq.hsydk.cn/index/index/checkYzm',
+				data:{
+					tel:$('#phone').val(),
+				},
+				type:'POST',
+				dataType:'json',
+			}).then(function(a){
+				duanx=a;
+				})
+			})
+//			console.log(duanx)
+			
+				
+			
+			$('#btn').click(function(){
+//				console.log(duanx)
+				$.ajax({
+					url:'http://datainfo.duapp.com/shopdata/getuser.php',
+					data:{
+						userID:$('#user').val(),
+					},
+					type:'POST',
+					dataType:'jsonp',
+				}).then(function(a){
+//					console.log(a[0][0])
+					Iduser.push(a[0][0]);
+					// str.push(Iduser);
+					console.log(Iduser)//正常
+					
+					setCookie("Iduser",Iduser,7);
+					$('#username').html(Iduser)
+					$('#username').css({
+						color:"#cc0000"
+					});
+				})
+//				console.log(Iduser)//0
+				$.ajax({
+				url:'http://datainfo.duapp.com/shopdata/userinfo.php',
+				data:{
+					status:'login',
+					userID:$("#user").val(),
+					password:$('#pass').val(),
+				},
+				type:'POST',
+				dataType:'json',
+			}).then(function(a){
+//				console.log(a);
+				
+				if($("#user").val()!=""&&$('#pass').val()!=""){
+					
+					if(typeof a=='object'){
+						// window.location.href='http://localhost:3000/index.html'
+						alert("用户"+$("#user").val()+'登陆成功请返回首页')
+						$('#username').html(Iduser)
+						$('#username').css({
+							color:"green"
+						});
+					}else if(a==0){
+						alert('用户名不存在')
+					}else if(a==2){
+						alert('用户名和密码不符')
+						
+					}
+				}
+			})
+			
+			if(duanx==$('#dx').val()&&$('#phone').val()!=''){
+					alert("用户"+$('#phone').val()+'登陆成功请返回首页')
+					$('#username').html($('#phone').val())
+						$('#username').css({
+							color:"green"
+						});
+				}else if(duanx!=$('#dx').val()&&$('#phone').val()!=''){
+					alert('短信验证码错误')
+				}
+				
+			})
+			
+		})
+		
+</script>
+</html>

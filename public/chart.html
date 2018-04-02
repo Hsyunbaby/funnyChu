@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>聊天室</title>
+    <link rel="stylesheet" type="text/css" href="css/user.css">    
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+     <link rel="stylesheet" href="css/font-awesome.min.css">
+     <link rel="stylesheet" href="css/bootstrap.min.css">
+     <link rel="stylesheet" href="css/jquery.fancybox.css">
+     <link rel="stylesheet" href="css/animate.css">
+     <link rel="stylesheet" href="css/main.css">
+     <link rel="stylesheet" href="css/media-queries.css">
+     <style>
+         /* .chartheader{background:#0eb493;}
+         .chartcont{width: 1010px;margin: 0 auto;} */
+         .chartbox{border:1px solid #000; box-shadow: 2px 2px 5px #ccc;padding:10px;}
+         .chartbox h1{line-height: 60px;color:#000;text-align: center;margin-bottom: 30px;}
+         #send{border:1px solid #f5f5f5;padding: 5px;overflow: hidden;text-align: center;}
+         #send textarea{width: 300px;height: 80px;}
+         #send button{margin-right: 30px;margin-top: 20px;margin-bottom: 10px;}
+     </style>
+</head>
+
+<body>
+    <div class="chartheader">
+
+     </div>
+     <div class="chartcont">
+        <div class="chartbox">
+            <h1>聊天室--在线人数
+                <span id="s1"></span>
+                </h1>
+                <div style="width: 40%; float: left" id="send">
+                   
+                    <textarea id="msginput" placeholder="请输入要发送的信息..."></textarea>
+                    <button id="msgbtn">发送</button><button id="privatebtn">私信</button>
+                    <ul id="list">
+                    </ul>
+                </div>
+                <div style="width: 50%; float: right;margin-left:50px;" id="showbox">
+                    
+                </div>
+            </div>
+        </div>            
+        </body>
+        
+        <script src="./js/socket.io.js"></script>
+        <script src="js/jquery-2.1.0.js"></script>
+        <script src="js/cookie.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script>
+             var str=0;
+            $('.chartheader').load('http://localhost:3000/index.html header',function(){
+                str=getCookie("Iduser")
+               
+				$('#username').html(str).css({
+					color:"#cc0000"
+				})
+	//			console.log($('#username').html())
+				if($('#username').html()!=''){
+					$('#username').attr({"title":"点我退出登录"});
+					$('#username').click(function(e){
+						e.preventDefault();
+						$('#username').html('');
+						removeCookie("Iduser",1,-1)
+					})
+				}else{
+					$('#username').attr({"title":""})
+					document.getElementById("username").style.textDecoration="none";
+                }
+                socket.emit('login', { username: '用户名' + "<span style='color:#cc0000'>"+str+"</span>" });
+            })
+            console.log(str);
+            let socket = io('http://localhost:3000');
+            
+            //登录
+            let btn = document.getElementById('msgbtn');
+            let msginput = document.getElementById('msginput');
+            let showbox = document.getElementById('showbox');
+            let s1 = document.getElementById('s1');
+            let list = document.getElementById('list');
+            
+            
+           
+            
+            socket.on('login', (data) => {  //监听服务器发来的自定义事件
+                // console.log('收到');  
+                let message = document.createElement('div');
+                message.innerHTML = `${data.username}: ${data.msg}`;  //显示客户端id,和发来的数据
+                showbox.appendChild(message);
+            });
+            
+            socket.on('update', (data) => {  //监听服务器发来的自定义事件
+                s1.innerHTML = data.onlineCount;
+                list.innerHTML = '';
+                data.onlineUserName.forEach(username => {
+                    var oLi = document.createElement('li');
+                    oLi.innerHTML = username;
+                    list.appendChild(oLi);
+                });
+            })
+            
+            socket.on('logout', (data) => {  //监听服务器发来的自定义事件
+                let message = document.createElement('div');
+                message.innerHTML = `${data.username}: ${data.msg}`;  //显示客户端id,和发来的数据
+                showbox.appendChild(message);
+    })
+    
+    btn.addEventListener('click', (event) => {
+        let data = { msg: msginput.value };
+        socket.emit('message', data);  //发送消息到服务器
+    });
+
+    socket.on('message', (data) => {  //监听服务器发来的自定义事件
+        let message = document.createElement('div');
+        message.innerHTML = `${data.username}: ${data.msg}`;  //显示客户端id,和发来的数据
+        showbox.appendChild(message);
+    })
+
+    //发私信
+    //事件委托+私信点击用户名发送
+    list.addEventListener('click', (event) => {
+        // console.log(event);
+        if (event.srcElement.tagName == 'LI') {
+            console.log(event.srcElement.innerHTML);
+            var toUserName = event.srcElement.innerHTML;
+            let data = { msg: msginput.value };
+            // socket.emit('private message','目标人', 数据,(发送后的结果数据)=>{
+            socket.emit('private message', toUserName, data, (data) => {
+                let message = document.createElement('div');
+                message.innerHTML = data;  //显示客户端id,和发来的数据
+                showbox.appendChild(message);
+            });
+        }
+
+    });
+
+
+    socket.on('private message', (data) => {  //监听服务器发来的自定义事件
+        let message = document.createElement('div');
+        message.innerHTML = `${data.fromUserName}对你悄悄说: ${data.msg}`;  //显示客户端id,和发来的数据
+        showbox.appendChild(message);
+    })  
+
+</script>
+
+
+</html>

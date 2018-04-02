@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>首页</title>		
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="author" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/jquery.fancybox.css">
+        <link rel="stylesheet" href="css/animate.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/media-queries.css">
+
+        
+        <script src="js/modernizr-2.6.2.min.js"></script>
+    </head>
+	
+    <body id="body">
+	
+		<!-- preloader -->
+		<div id="preloader">
+			<img src="img/preloader.gif" alt="Preloader">
+		</div>
+		<!-- end preloader -->
+
+        <!-- 
+        Fixed Navigation
+        ==================================== -->
+        <header id="navigation" class="navbar-fixed-top navbar">
+            <div class="container">
+                <div class="navbar-header">
+                    <!-- responsive nav button -->
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <i class="fa fa-bars fa-2x"></i>
+                    </button>
+					<!-- /responsive nav button -->
+					
+					<!-- logo -->
+                    <a class="navbar-brand" href="#body">
+						<h1 id="logo">
+							<img src="" alt="">滁趣游
+							<span id="username"></span>
+						</h1>
+					</a>
+					<!-- /logo -->
+                </div>
+
+				<!-- main nav -->
+                <nav class="collapse navbar-collapse navbar-right" role="navigation">
+                    <ul id="nav" class="nav navbar-nav">
+                        
+                        <li class="current"><a href="index.html">首页</a></li>
+                        <li><a href="#features">特点</a></li>
+                        <li><a href="#works">滁州风采</a></li>
+                        <li><a href="#team">导游推荐</a></li>
+                        <li><a href="#contact">留言板</a></li>
+                        <li><a href="login.html">登录</a></li>
+                        <li><a href="register.html">注册</a></li>
+                    </ul>
+                </nav>
+				<!-- /main nav -->
+				
+            </div>
+        </header>
+        <!--
+        End Fixed Navigation
+        ==================================== -->
+		
+		
+		
+        <!--
+        Home Slider
+        ==================================== -->
+		
+		<section id="slider">
+			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+			
+				<!-- Indicators bullet -->
+				<ol class="carousel-indicators">
+					<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+					<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+				</ol>
+				<!-- End Indicators bullet -->				
+				
+				<!-- Wrapper for slides -->
+				<div class="carousel-inner" role="listbox">
+					
+					<!-- single slide -->
+					<div class="item active" style="background-image: url(img/banner1.jpg);">
+						<div class="carousel-caption">
+							<h2 data-wow-duration="700ms" data-wow-delay="500ms" class="wow bounceInDown animated">相遇<span> 滁州</span>!</h2>
+							<h3 data-wow-duration="1000ms" class="wow slideInLeft animated"><span class="color">/welcome</span> 醉意山水，皖美滁州</h3>
+							<p data-wow-duration="1000ms" class="wow slideInRight animated">醉翁之意不在酒，在乎山水好滁州</p>
+							
+							<ul class="social-links text-center">
+								<li><a href=""><i class="fa fa-qq fa-lg"></i></a></li>
+								<li><a href=""><i class="fa fa-weixin fa-lg"></i></a></li>
+								<li><a href=""><i class="fa fa-facebook fa-lg"></i></a></li>
+								<li><a href=""><i class="fa fa-weibo fa-lg"></i></a></li>
+							</ul>
+						</div>
+					</div>
+					<!-- end single slide -->
+					
+					<!-- single slide -->
+					<div class="item" style="background-image: url(img/banner.jpg);">
+						<div class="carousel-caption">
+							<h2 data-wow-duration="500ms" data-wow-delay="500ms" class="wow bounceInDown animated">相遇<span> 滁州</span>!</h2>
+							<h3 data-wow-duration="500ms" class="wow slideInLeft animated"><span class="color">/welcome</span> 醉意山水，皖美滁州</h3>
+							<p data-wow-duration="500ms" class="wow slideInRight animated">醉翁之意不在酒，在乎山水好滁州</p>
+							
+							<ul class="social-links text-center">
+								<li><a href=""><i class="fa fa-qq fa-lg"></i></a></li>
+								<li><a href=""><i class="fa fa-weixin fa-lg"></i></a></li>
+								<li><a href=""><i class="fa fa-facebook fa-lg"></i></a></li>
+								<li><a href=""><i class="fa fa-weibo fa-lg"></i></a></li>
+							</ul>
+						</div>
+					</div>
+					<!-- end single slide -->
+					
+				</div>
+				<!-- End Wrapper for slides -->
+				
+			</div>
+		</section>
+		
+        <!--
+        End Home SliderEnd
+        ==================================== -->
+        
+        <!--rightnav start-->
+		<div class="rightnav">
+			<div class="rightBox">
+            <ul class="rightBox-ul">
+                <li class="fir">
+                    <a href="javaScript:void(0)"></a>
+                    <div class="fir-leftBox"></div>
+                </li>
+                <li class="sec">
+                    <a href="javaScript:void(0)">
+                        <i></i>
+                        <div class="con">购物车</div>
+                        <span id="btn1-add">0</span>
+                    </a>
+                    <div class="leftBox">我的购物车</div>
+                </li>
+                <li class="thir">
+                    <a href="javaScript:void(0)"></a>
+                    <div class="leftBox">我的资产</div>
+                </li>
+                <li class="four">
+                    <a href="javaScript:void(0)"></a>
+                    <div class="leftBox">我的足迹</div>
+                </li>
+                <li class="fif">
+                    <a href="javaScript:void(0)">
+                        <i></i>
+                        <span id="btn2-add">0</span>
+                    </a>
+                    <div class="leftBox">我的收藏</div>
+                </li>
+                <li class="six">
+                    <a href="javaScript:void(0)"></a>
+                    <div class="leftBox">我要充值</div>
+                </li>
+                <li class="seven">
+                    <a href="javaScript:void(0)"></a>
+                    <div class="sev-leftBox"></div>
+                </li>
+            </ul>
+        </div>
+		</div>
+        <!--
+        Features
+        ==================================== -->
+		
+		<section id="features" class="features">
+			<div class="container">
+				<div class="row">
+				
+					<div class="sec-title text-center mb50 wow bounceInDown animated" data-wow-duration="500ms">
+						<h2>特点</h2>
+						<div class="devider"><i class="fa fa-heart-o fa-lg"></i></div>
+					</div>
+
+					<!-- service item -->
+					<div class="col-md-4 wow fadeInLeft" data-wow-duration="500ms">
+						<div class="service-item">
+							<div class="service-icon">
+								<i class="fa fa-github fa-2x"></i>
+							</div>
+							
+							<div class="service-desc">
+								<h3>滁州介绍</h3>
+								<p>滁州吴风楚韵，气贯淮扬，接壤金陵西北，为六朝京畿之地，自古有“金陵锁钥、江淮保障”之称，“形兼吴楚、气越淮扬”、“儒风之盛、夙贯淮东”之誉。历史悠久，文化昌盛，人杰地灵，湖光山色，既富江南美景，又有淮左秀色，旅游资源十分丰富。有国家级风景名胜区、国家森林公园、全国重点文物保护单位和省级自然保护区和重点文物保护单位多处，有很多名山、名亭、古关、古寺、历史文化遗址等自然人文景观和国家级重点对外开放寺院。</p>
+							</div>
+						</div>
+					</div>
+					<!-- end service item -->
+					
+					<!-- service item -->
+					<div class="col-md-4 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="500ms">
+						<div class="service-item">
+							<div class="service-icon">
+								<i class="fa fa-pencil fa-2x"></i>
+							</div>
+							
+							<div class="service-desc">
+								<h3>滁州旅游市场分析</h3>
+								<p>一篇欧阳太守的《醉翁亭记》，伴随着中国的一代诗人传遍了华夏的每一个角落；一代天骄朱元璋，建立起了明王朝，贯穿了中国的历史；谷深处抬头望天如一线，谷浅处举目观山如层峦的狼巷迷谷；小岗人开创了家庭联产承包责任制的先河，揭开了中国改革开放的序幕......在我们每一个人的心中，对滁州都有一份额外的亲切和敬仰。无论男女老少，都是滁州的目标消费者。滁州地处安徽省最东部，苏皖交界地区，属长江三角洲合作核心区。因此，滁州市的旅游发展定能推动城市经济的发展。</p>
+								
+							</div>
+						</div>
+					</div>
+					<!-- end service item -->
+					
+					<!-- service item -->
+					<div class="col-md-4 wow fadeInRight" data-wow-duration="500ms"  data-wow-delay="900ms">
+						<div class="service-item">
+							<div class="service-icon">
+								<i class="fa fa-bullhorn fa-2x"></i>
+							</div>
+							
+							<div class="service-desc">
+								<h3>滁州旅游发展</h3>
+								<p>近年来滁州旅游业不仅在战略上摆上了重要位置，而且在实践中也采取了很多措施。本旅游网站围绕增加有效供给打造核心产品，围绕优化旅游环境完善公共服务，围绕旅游形象宣传创新营销模式，围绕增强发展动力推动旅游改革，争取为安徽打造旅游强省作出新的更大贡献。积极倡导“人人都是旅游形象、事事关系旅游环境、处处要为旅游服务”的观念，形成旅游业加快发展的良好氛围。</p>
+							</div>
+						</div>
+					</div>
+					<!-- end service item -->
+						
+				</div>
+			</div>
+		</section>
+		
+        <!--
+        End Features
+        ==================================== -->
+		
+		
+        <!--
+        Our Works
+        ==================================== -->
+		
+		<section id="works" class="works clearfix">
+			<div class="container">
+				<div class="row">
+				
+					<div class="sec-title text-center">
+						<h2>滁州风采</h2>
+						<div class="devider"><i class="fa fa-heart-o fa-lg"></i></div>
+					</div>
+					
+					<div class="sec-sub-title text-center">
+						<p>爱上趣游，爱上滁州</p>
+					</div>
+					
+					<div class="work-filter wow fadeInRight animated" data-wow-duration="500ms">
+						<ul class="text-center" id="text-nav">
+							<li><a href="javascript:;" data-filter=".foods"   class="filter first">特色吃喝</a></li>
+							<li><a href="javascript:;" data-filter=".hotel" class="filter second">酒店住行</a></li>
+							<li><a href="javascript:;" data-filter=".road" class="filter third">旅游线路</a></li>
+							<!-- <li><a href="javascript:;" data-filter="all" class="filter">more</a></li> -->
+						</ul>
+					</div>
+					
+				</div>
+			</div>
+			
+			<div class="project-wrapper">
+				<div id="foods">
+					
+				</div>
+				<div id="hotel">
+
+				</div>
+				
+				<div id="road">
+					
+				</div>
+			</div>
+		
+
+		</section>
+		
+        <!--
+        End Our Works
+        ==================================== -->
+		
+        <!--
+        Meet Our Team
+        ==================================== -->		
+		
+		<section id="team" class="team">
+			<div class="container">
+				<div class="row">
+		
+					<div class="sec-title text-center wow fadeInUp animated" data-wow-duration="700ms">
+						<h2>导游推荐</h2>
+						<div class="devider"><i class="fa fa-heart-o fa-lg"></i></div>
+					</div>
+					
+					<div class="sec-sub-title text-center wow fadeInRight animated" data-wow-duration="500ms">
+						<p>把敬业变成习惯，把欢乐传递给每一位游客，做一位传播快乐的使者。遇见滁州，遇见对的我！</p>
+					</div>
+
+					<!-- single member -->
+					<figure class="team-member col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms">
+						<div class="member-thumb">
+							<img src="img/team/member-1.png" alt="Team Member" class="img-responsive">
+							<figcaption class="overlay">
+								<h5>张丽丽 </h5>
+								<p>华夏风光世无双，如诗如画游家乡。</p>
+								<ul class="social-links text-center">
+									<li><a href=""><i class="fa fa-weixin fa-lg"></i></a></li>
+									<li><a href=""><i class="fa fa-qq fa-lg"></i></a></li>
+									<li><a href=""><i class="fa fa-weibo fa-lg"></i></a></li>
+								</ul>
+							</figcaption>
+						</div>
+						<h4>张丽丽</h4>
+						<span>华夏风光世无双，如诗如画游家乡。</span>
+					</figure>
+					<!-- end single member -->
+					
+					<!-- single member -->
+					<figure class="team-member col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="300ms">
+						<div class="member-thumb">
+							<img src="img/team/member-2.png" alt="Team Member" class="img-responsive">
+							<figcaption class="overlay">
+								<h5>李树鹏 </h5>
+								<p>风景永远在前方，我们永远在路上。</p>
+								<ul class="social-links text-center">
+									<li><a href=""><i class="fa fa-weixin fa-lg"></i></a></li>
+									<li><a href=""><i class="fa fa-qq fa-lg"></i></a></li>
+									<li><a href=""><i class="fa fa-weibo fa-lg"></i></a></li>
+								</ul>
+							</figcaption>
+						</div>
+						<h4>李树鹏</h4>
+						<span>风景永远在前方，我们永远在路上。</span>
+					</figure>
+					<!-- end single member -->
+					
+					<!-- single member -->
+					<figure class="team-member col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="600ms">
+						<div class="member-thumb">
+							<img src="img/team/member-3.png" alt="Team Member" class="img-responsive">
+							<figcaption class="overlay">
+								<h5>俞青 </h5>
+								<p>好山好水家乡美，尽心尽责导八方。</p>
+								<ul class="social-links text-center">
+									<li><a href=""><i class="fa fa-weixin fa-lg"></i></a></li>
+									<li><a href=""><i class="fa fa-qq fa-lg"></i></a></li>
+									<li><a href=""><i class="fa fa-weibo fa-lg"></i></a></li>
+								</ul>
+							</figcaption>
+						</div>
+						<h4>俞青</h4>
+						<span>好山好水家乡美，尽心尽责导八方。</span>
+					</figure>
+					<!-- end single member -->
+					
+					<!-- single member -->
+					<figure class="team-member col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="900ms">
+						<div class="member-thumb">
+							<img src="img/team/member-1.png" alt="Team Member" class="img-responsive">
+							<figcaption class="overlay">
+								<h5>冯婷婷 </h5>
+								<p>我的未来由我创，滁州河山由我来为您展现。</p>
+								<ul class="social-links text-center">
+								<li><a href=""><i class="fa fa-weixin fa-lg"></i></a></li>
+									<li><a href=""><i class="fa fa-qq fa-lg"></i></a></li>
+									<li><a href=""><i class="fa fa-weibo fa-lg"></i></a></li>
+								</ul>
+							</figcaption>
+						</div>
+						<h4>冯婷婷</h4>
+						<span>我的未来由我创，滁州河山由我来为您展现。</span>
+					</figure>
+					<!-- end single member -->
+					
+				</div>
+			</div>
+		</section>
+		
+        <!--
+        End Meet Our Team
+        ==================================== -->
+		
+		
+		
+		
+		<!--
+        Contact Us
+        ==================================== -->		
+		
+		<section id="contact" class="contact">
+			<div class="container">
+				<div class="row mb50">
+				
+					<div class="sec-title text-center mb50 wow fadeInDown animated" data-wow-duration="500ms">
+						<h2>遇见不一样的你</h2>
+						<div class="devider"><i class="fa fa-heart-o fa-lg"></i></div>
+					</div>
+					
+					<div class="sec-sub-title text-center wow rubberBand animated" data-wow-duration="1000ms">
+						<p>这个世界很小，我们就这样遇见。这个世界很大，分开就很难再见。</p>
+					</div>
+					
+					<!-- contact address -->
+					<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 wow fadeInLeft animated" data-wow-duration="500ms">
+						<div class="contact-address">
+							<h3>谁谁谁发表留言</h3>
+							<p>内容</p>
+							<p>时间</p>
+							<p>发表地点</p>
+						</div>
+					</div>
+					<!-- end contact address -->
+					
+					<!-- contact form -->
+					<div class="col-lg-8 col-md-8 col-sm-7 col-xs-12 wow fadeInDown animated" data-wow-duration="500ms" data-wow-delay="300ms">
+						<div class="contact-form">
+							<h3>HELLO！</h3>
+							<form action="#" id="contact-form">
+								<div class="input-group name-email">
+									<div class="input-field">
+										<input type="text" name="name" id="name" placeholder="Name" class="form-control">
+									</div>
+									<div class="input-field">
+										<input type="email" name="email" id="email" placeholder="Email" class="form-control">
+									</div>
+								</div>
+								<div class="input-group">
+									<textarea name="message" id="message" placeholder="Message" class="form-control"></textarea>
+								</div>
+								<div class="input-group">
+									<input type="submit" id="form-submit" class="pull-right" value="发送">
+								</div>
+							</form>
+						</div>
+					</div>
+					<!-- end contact form -->
+					
+					<!-- footer social links -->
+					<div class="col-lg-1 col-md-1 col-sm-1 col-xs-12 wow fadeInRight animated" data-wow-duration="500ms" data-wow-delay="600ms">
+						<ul class="footer-social">
+							<li><a href="#Themefisher"><i class="fa fa-weixin fa-2x"></i></a></li>
+							<li><a href="#/Themefisher"><i class="fa fa-facebook fa-2x"></i></a></li>
+							<li><a href="#/themefisher"><i class="fa fa-qq  fa-2x"></i></a></li>
+							<li><a href="#/Themefisher"><i class="fa fa-weibo fa-2x"></i></a></li>
+						</ul>
+						
+					</div>
+					<!-- end footer social links -->
+					
+				</div>
+			</div>
+			
+			
+			
+		</section>
+		
+        <!--
+        End Contact Us
+        ==================================== -->
+		
+		
+		<footer id="footer" class="footer">
+			<div class="container">
+				<div class="row">
+				
+					<div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp animated" data-wow-duration="500ms">
+						<div class="footer-single">
+							<img src="img/b_logo.png" alt="">
+							<p>滁趣游为您提供最详实的滁州旅游资讯,旅游攻略指南,旅游景点大全,更有真实用户的旅游经历,游记攻略。滁趣游,让旅行更简单。您的需求，就是我们的动力。</p>
+						</div>
+					</div>
+				
+					<div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="300ms">
+						<div class="footer-single">
+							<h6>订阅 </h6>
+							<form action="#" class="subscribe">
+								<input type="text" name="subscribe" id="subscribe">
+								<input type="submit" value="&#8594;" id="subs">
+							</form>
+							<p>填写邮箱，欢迎加入我们！ </p>
+						</div>
+					</div>
+				
+					<div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="600ms">
+						<div class="footer-single">
+							<h6>搜索</h6>
+							<ul>
+								<li><a href="#">加入我们</a></li>
+								<li><a href="#">谷歌</a></li>
+								<li><a href="#">百度一下</a></li>
+								<li><a href="#">360搜索</a></li>
+							</ul>
+						</div>
+					</div>
+				
+					<div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="900ms">
+						<div class="footer-single">
+							<h6>支持一下</h6>
+							<ul>
+								<li><a href="#">联系我们</a></li>
+								<li><a href="#">加入博客</a></li>
+								<li><a href="#">帮助中心</a></li>
+								<li><a href="#">热线电话</a> | 0050：124387492</li>
+							</ul>
+						</div>
+					</div>
+					
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<p class="copyright text-center">
+							Copyright &copy; 2017.Company name All rights reserved.<a target="_blank" href=""></a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+		
+		<a href="javascript:void(0);" id="back-top"><i class="fa fa-angle-up fa-3x"></i></a>
+
+		<!-- Essential jQuery Plugins
+		================================================== -->
+		<!-- Main jQuery -->
+        <script src="js/jquery-2.1.0.js"></script>
+        <script src="js/rightnav.js" type="text/javascript" charset="utf-8"></script>
+		<!-- Single Page Nav -->
+        <script src="js/jquery.singlePageNav.min.js"></script>
+		<!-- Twitter Bootstrap -->
+        <script src="js/bootstrap.min.js"></script>
+		<!-- jquery.fancybox.pack -->
+        <script src="js/jquery.fancybox.pack.js"></script>
+		<!-- jquery.mixitup.min -->
+        <script src="js/jquery.mixitup.min.js"></script>
+		<!-- jquery.parallax -->
+        <script src="js/jquery.parallax-1.1.3.js"></script>
+		<!-- jquery.countTo -->
+        <script src="js/jquery-countTo.js"></script>
+		<!-- jquery.appear -->
+        <script src="js/jquery.appear.js"></script>
+		<!-- Contact form validation -->
+		<script src="js/jquery.form.js"></script>
+		<script src="js/jquery.validate.min.js"></script>
+		<!-- jquery easing -->
+        <script src="js/jquery.easing.min.js"></script>
+		<!-- jquery easing -->
+        <script src="js/wow.min.js"></script>
+		<script>
+			var wow = new WOW ({
+				boxClass:     'wow',      
+				animateClass: 'animated', 
+				offset:       120,          
+				mobile:       false,      
+				live:         true        
+			  }
+			);
+			wow.init();
+		</script> 
+		<!-- Custom Functions -->
+        <script src="js/custom.js"></script>
+		<script src="js/cookie.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/flyimg.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				
+	//			console.log(getCookie("Iduser"));
+				var str=[];
+				str=getCookie("Iduser")
+				if(str){
+					var strArr=str.split(',');
+				}
+				strArr.forEach((v,k)=>{
+					if(v==$('#user').val()){
+						console.log(1);
+						$('#username').html(v).css({
+							color:"#cc0000"
+						})
+					}
+				})
+				
+	//			console.log($('#username').html())
+				if($('#username').html()!=''){
+					$('#username').attr({"title":"点我退出登录"});
+					$('#username').click(function(e){
+						e.preventDefault();
+						$('#username').html('');
+						removeCookie("Iduser",1,-1)
+					})
+				}else{
+					$('#username').attr({"title":""})
+					document.getElementById("username").style.textDecoration="none";
+				}
+
+				$('#text-nav').children('li').eq(0).children('a').css({
+					background:'#0eb493',
+					color:'#fff'
+				});
+				
+				$('#text-nav').children('li').eq(3).children('a').css({
+					background:'#fff',
+					color:'#000'
+				});
+				
+				$('#text-nav').children('li').mouseenter(function (){
+					$('#text-nav').children('li').find('a').css({
+						background:'#fff',
+						color:'#000'
+					});
+					$(this).children('a').css({
+						background:'#0eb493',
+						color:'#fff'
+					});
+					$('.project-wrapper').children('div').css({
+						display:'none'
+					});
+					// console.log($(this).index())
+					$('.project-wrapper').children('div').eq($(this).index()).css({
+						display:'block'
+					});
+				})
+
+				//foods request
+				
+				$.ajax({
+					url:'/index',
+					type:'get',
+					async:false
+				}).then(function(res){
+					var json=res;
+					var str = "";
+					for(let i=0;i<json.length;i++){
+						str += `<figure class="mix work-item foods active">
+							<img src="${json[i].imgsrc}" alt="">
+							<figcaption class="overlay">
+								<a class="fancybox" rel="works" title="Write Your Image Caption Here" href="${json[i].imgsrc}"><i class="fa fa-eye fa-lg"></i></a>
+								<div class="goods">
+									<h4>${json[i].name}</h4>
+									<del>${json[i].del}</del>
+									<p>${json[i].pri}</p>
+									<div class="head"><span data-id="${json[i].goodsId}" class='car butt'> + 加入购物车</span><span data-id="${json[i].goodsId}" class='collect butt'> + 加入收藏夹</span></div>
+									</div>
+									</figcaption></figure>`
+								}
+								$("#foods").html(str);
+								clickBtn("#foods");
+							})
+
+				$.ajax({
+					url:'/index2',
+					type:'get',
+					async:false
+				}).then(function(res){
+					var json=res;
+					var str = "";
+					for(let i=0;i<json.length;i++){
+						str += `<figure class="mix work-item road">
+							<img src="${json[i].imgsrc}" alt="">
+							<figcaption class="overlay">
+								<a class="fancybox" rel="works" title="Write Your Image Caption Here" href="${json[i].imgsrc}"><i class="fa fa-eye fa-lg"></i></a>
+								<div class="goods">
+									<h4>${json[i].name}</h4>
+									<del>${json[i].del}</del>
+									<p>${json[i].pri}</p>
+									<div class="head"><span data-id="${json[i].goodsId}" class='road-index'>查看详情</span><span data-id="${json[i].goodsId}" class='collect butt'> + 加入收藏夹</span></div>
+									<div class="msg">
+										地址：<em>${json[i].address}</em></br>
+									</div>
+									</div>
+									</figcaption></figure>`
+								}
+					$("#road").html(str);
+					clickBtn("#road");
+				})
+				var RSpan=document.getElementsByClassName('road-index');
+				for(let i=0;i<RSpan.length;i++){
+					RSpan[i].onclick=function(){
+						$('.msg').css({
+							display:'none'
+						})
+						$('.msg').eq(i).css({
+							display:'block'
+						})
+						$('.msg').eq(i).mouseleave(function () {
+							$(this).css({
+								display:'none'
+							})
+						})
+					}
+				}
+				//hotel request
+
+				$.ajax({
+					url:'/index1',
+					type:'get',
+					async:false
+				}).then(function(res){
+					var json=res;
+					var str = "";
+				for(let i=0;i<json.length;i++){
+					str += `<figure class="mix work-item hotel">
+						<img src="${json[i].imgsrc}" alt="">
+					<figcaption class="overlay">
+						<a class="fancybox" rel="works" title="Write Your Image Caption Here" href="${json[i].imgsrc}"><i class="fa fa-eye fa-lg"></i></a>
+						<div class="goods">
+							<h4>${json[i].name}</h4>
+							<p>${json[i].pri}</p>
+							<div class="head"><span data-id="${json[i].goodsId}" class='hotel-index'> + 预订</span><span data-id="${json[i].goodsId}" class='collect butt'> + 加入收藏夹</span></div>
+							<div class="mesg">
+								地址：<em>${json[i].address}</em></br>
+								电话：<em>${json[i].phone}</em>
+							</div>
+						</div>
+					</figcaption></figure>`
+				}
+				$("#hotel").html(str);
+				clickBtn("#hotel");
+			})
+			// console.log($('#hotel').children('figure').find('.hotel-index'))
+			var oSpan=document.getElementsByClassName('hotel-index');
+			for(let i=0;i<oSpan.length;i++){
+				oSpan[i].onclick=function(){
+					$('.mesg').css({
+						display:'none'
+					})
+					$('.mesg').eq(i).css({
+						display:'block'
+					})
+					$('.mesg').eq(i).mouseleave(function () {
+						$(this).css({
+							display:'none'
+						})
+					  })
+				}
+			}
+				
+
+				$('#contact-form').validate({
+					rules: {
+						name: {
+							required: true,
+							minlength: 2
+						},
+						email: {
+							required: true,
+							email: true
+						},
+						message: {
+							required: true
+						}
+					},
+					messages: {
+						name: {
+							required: "请输入您的名字哦！",
+							minlength: "名字至少两个字哦！"
+						},
+						email: {
+							required: "请输入您的邮件账号！"
+						},
+						message: {
+							required: "留言不能为空哦！",
+							minlength: "准备好了吗？"
+						}
+					},
+					submitHandler: function(form) {
+						$(form).ajaxSubmit({
+							type:"POST",
+							data: $(form).serialize(),
+							url:"process.php",
+							success: function() {
+								$('#contact-form :input').attr('disabled', 'disabled');
+								$('#contact-form').fadeTo( "slow", 0.15, function() {
+									$(this).find(':input').attr('disabled', 'disabled');
+									$(this).find('label').css('cursor','default');
+									$('#success').fadeIn();
+								});
+							},
+							error: function() {
+								$('#contact-form').fadeTo( "slow", 0.15, function() {
+									$('#error').fadeIn();
+								});
+							}
+						});
+					}
+				});
+			});
+		</script>
+    </body>
+</html>

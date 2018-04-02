@@ -1,0 +1,65 @@
+@charset "utf-8";
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, a, code, em, img, q, small, strong, dd, dl, dt, li, ol, ul, fieldset, form, label, table, tbody, tr, th, td, input
+{margin:0;padding:0;font-family:微软雅黑;}
+a{color:#333;text-decoration:none;}
+a:hover{color:#f60;}
+li{list-style:none;}
+.clear{clear:both;}
+html{width:100%;}
+body{width:100%;min-width:1280px;background:#efefef;}
+.clear{clear:both;}
+.cw1000{width:1000px;margin:0 auto;}
+.w700{width:700px;}
+.w280{width:280px;}
+.fr{float:right;}
+.fl{float:left;}
+.mh500{min-height:500px;}
+.pd30{padding:30px;}
+.pd80{padding:80px;}
+.pd10{padding:10px;}
+.pd_r150{padding-right:150px;}
+
+/*----------------登录注册---------------*/
+#log_register{height:1200px;position:fixed;width:100%;height:100%;background:url(../img/log_register.jpg) no-repeat center;background-size: cover;}
+#log_register .lr_box{width:350px;padding:15px 30px 20px 30px;margin-top:-175px;margin-left:-185px;position:absolute;left:50%;top:37%;background-color: #fff;border-radius: 5px;box-shadow: 0 3px 3px rgba(0,0,0,.4);}
+#log_register .lr_box tr td button{float: right;margin-top: 10px;}
+#log_register .tag{margin-bottom:15px;}
+#log_register .tag li{float:left;width:50%;text-align:center;}
+#log_register .tag li a{display:block;height:50px;padding-bottom:5px;font-size:30px;border-bottom:3px solid #ddd;}
+#log_register .tag li a.cur{border-bottom:3px solid #f80;color:#f80;}
+#log_register .tag li #reg{color:#000;}
+#log_register .table_list{width:100%;}
+#log_register .table_list td{padding:10px 0;}
+#log_register .table_list input.text{width:100%;border:1px solid #d3d3d3;height:50px;padding:6px 8px;line-height:18px;font-size:14px;color:#999;outline:none;transition:box-shadow 0.25s linear 0s;border-radius: 3px;}
+#log_register .table_list input.text:focus {border:1px solid #ffa800;transition:box-shadow 0.25s linear 0s;box-shadow:0 0 5px #ffa200;}
+#log_register .table_list input.submit{width:100%;background:#f80;border:0;color:white;height:50px;font-size:14px;outline:none;transition:box-shadow 0.25s linear 0s;border-radius: 3px;}
+
+#log_register .table_list .am-radio,#log_register .am-checkbox {margin:0;padding:0;float:left;}
+#log_register .table_list .am-ucheck-icons{top:2px;}
+#log_register .table_list td .chk_1{display:none;} 
+#log_register .table_list td .chk_1 + label{border:1px solid #ffa800;width:20px;height:20px;top:5px;border-radius:5px;display:inline-block;position:relative;} 
+/* #log_register .table_list td .chk_1 + label:active{}  */
+#log_register .table_list td .chk_1:checked + label {border:1px solid #f80;color:#f80;} 
+#log_register .table_list td .chk_1:checked + label:after {content: '\2714';position:absolute;top:0px;left:0px;color:#f80;width:100%;text-align:center;font-size:1.4em;line-height:18px;} 
+
+#log_register .table_list td .am-checkbox{color:#666;}
+#log_register .table_list td .back{float:right;}
+/*----------------订单详情---------------*/
+#order_details{padding:50px 0;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

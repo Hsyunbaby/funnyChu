@@ -1,0 +1,66 @@
+[
+	{
+		"goodsId":"0009",
+		"imgsrc":"http://dimg11.c-ctrip.com/images/20060b000000595ho4E22_R_100_75.jpg",
+		"name":"滁州凯迪温德姆至尊豪廷大酒店",
+		"pri":"￥409元起",
+		"address":"【 琅琊区】南谯区南谯南路2888号，近市政府。",
+		"phone":"(0550)3898888"
+	},
+	{
+		"goodsId":"0010",
+		"imgsrc":"http://dimg13.c-ctrip.com/images/200f0d0000006tvl1C07F_R_100_75.jpg",
+		"name":"滁州斯亚酒店",
+		"pri":"￥258元起",
+		"address":"【 市中心区域】琅琊区南谯北路928号，近琅琊东路。",
+		"phone":"(0550)3705666"
+	},
+	{
+		"goodsId":"0011",
+		"imgsrc":"http://dimg11.c-ctrip.com/images/hotel/58000/57481/bbef2d192fde4ff0b3205a7a6eece452_R_100_75.jpg",
+		"name":"滁州金地大酒店",
+		"pri":"￥218元起",
+		"address":"【 市中心区域】琅琊区凤凰西路181号，滁州市地税局旁。 。",
+		"phone":"(0550)3011912"
+	},
+	{
+		"goodsId":"0012",
+		"imgsrc":"http://dimg13.c-ctrip.com/images/hotel/345000/344754/dd5d3035971148b0973630d891ad46b4_R_100_75.jpg",
+		"name":"滁州冠景泊悦酒店(原琅琊山冠景国际旅游度假中心)",
+		"pri":"￥272元起",
+		"address":"【 琅琊区】南谯区览山路111号，近琅琊山。",
+		"phone":"(0550)5778888"
+	},
+	{
+		"goodsId":"0013",
+		"imgsrc":"http://dimg13.c-ctrip.com/images/20040h0000008xdmn1EBD_R_100_75.jpg",
+		"name":"滁州森源国际大酒店",
+		"pri":"￥180元起",
+		"address":"【 市中心区域】琅琊区天长东路566号，近琅琊东路。",
+		"phone":"(0550)3043666"
+	},
+	{
+		"goodsId":"0014",
+		"imgsrc":"http://dimg10.c-ctrip.com/images/20050k000000c0ae9D96C_R_100_75.jpg",
+		"name":"滁州红三环大酒店",
+		"pri":"￥168元起",
+		"address":"【 市中心区域】琅琊区紫薇北路1329号，近凤凰东路。",
+		"phone":"(0550)3316999"
+	},
+	{
+		"goodsId":"0015",
+		"imgsrc":"http://dimg11.c-ctrip.com/images/t1/hotel/56000/55707/2d1b6538501242dc9f304a39a943e097_R_100_75.jpg",
+		"name":"滁州君家酒店",
+		"pri":"￥300元起",
+		"address":"【 市中心区域】琅琊区全椒路148号，近会峰路。",
+		"phone":"(0550)3218888"
+	},
+	{
+		"goodsId":"0016",
+		"imgsrc":"http://dimg13.c-ctrip.com/images/hotel/513000/512144/f8fc8775a1454d2e8d5b401a13fe3388_R_100_75.jpg",
+		"name":"滁州金鹏广场酒店",
+		"pri":"￥639元起",
+		"address":"【 琅琊区】南谯区龙蟠大道9号，近丰乐大道。",
+		"phone":"(0550)3311111"
+	}
+]

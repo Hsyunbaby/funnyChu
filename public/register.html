@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>注册</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-------------jquery库-------------->
+  	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+	<!-------------Amazeui--------------->
+    <script type="text/javascript" src="js/amazeui.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/amazeui.css">
+    <!------------核心样式-------------->
+    <link rel="stylesheet" type="text/css" href="css/user.css">    
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/media-queries.css">
+</head>
+<body>
+
+<div class="register-header"></div>
+<div id="log_register">
+		<div class="registerbox">
+			<h3>会员注册<span>欢迎来到滁趣游！</span></h3>
+			<div class="inp">
+				<h5>请输入会员信息 :<span>*您想以卖家身份登录吗<b>卖家登录</b></span></h5>
+				<div class="registerbody">
+					<p><span>用户名：</span><input type="text" name="user" id="user1" value="" /></p>
+					<p><span>密码：</span><input type="password" name="user" id="pass1" value="" /></p>
+					<p><span>确认密码：</span><input type="password" name="user" id="spass" value="" /></p>
+					<p><span>验证码：</span><input type="text" name="user" id="tel" value="" /><i id="yanz">1111</i></p>
+					<div class="msg1"></div>
+					<a id="btn1">注册</a><a href="index.html">返回首页</a>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+<script src="js/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/cookie.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	$('.register-header').load('http://localhost:3000/index.html header',function(){
+		$('#btn1').click(function(){
+			$.ajax({
+				type:"post",
+				url:"http://datainfo.duapp.com/shopdata/userinfo.php",
+				//https://api.smsbao.com/sms?u=USERNAME&p=PASSWORD&m=PHONE&c=CONTENT
+				data:{
+					status:"register",
+					userID:$('#user1').val(),
+					password:$('#pass1').val(),
+				},
+				dataType:'json',
+				async:false
+			}).then(function(res){
+//				
+				if(res==1&&($('#pass1').val()==$('#spass').val())&&($('#tel').val()==$('#yanz').html())){
+					window.location.href="http://localhost:3000/login.html";				
+					alert('用户'+$('#user1').val()+'注册成功！请登录');
+				}else if(($('#tel').val()!=$('#yanz').html())){
+					
+					alert('验证码不一致！');
+				
+				}else if(($('#pass1').val()!=$('#spass').val())){
+					alert('密码不一致！');
+				}else if(res==0){
+					alert('用户名重名！');
+				}else if(res==2){
+					alert('数据库报错！');
+				}else if($('#pass1').val()==''||$('#user1').val()==''){
+					alert("请输入正确用户名");
+				}
+			})
+			
+		})
+	});
+	$(function(){
+			
+			var num=Math.round(Math.random()*8999+1000);
+			$("#yanz").html(num);
+			$("#yanz").click(function(){
+				var num=Math.round(Math.random()*8999+1000);
+				$("#yanz").html(num);
+				
+			})
+		})
+		
+</script>
+</html>
